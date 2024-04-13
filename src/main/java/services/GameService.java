@@ -13,4 +13,7 @@ public interface GameService {
     Challenge getChallengeById(Long id);
     boolean startGame(Player player);
     boolean submitChallenge(Player player, Challenge challenge, String solution);
+
+    boolean verifyStudentCode(String code, int level);
+
 }
