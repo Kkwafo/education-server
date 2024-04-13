@@ -3,7 +3,6 @@ package controllers;
 import services.BookService;
 import model.Book;
 import model.Page;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +13,11 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-    private final BookService bookService;
+    private final BookService bookService = null;
 
-    @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
+    public BookController() {
     }
+
 
     // Obtener todos los libros
     @GetMapping
@@ -77,5 +75,9 @@ public class BookController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    public String sayHello() {
+        return "Hola";
     }
 }

@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EducationApplication {
 
     public static void main(String[] args) {
+        // Inicia la aplicación
         SpringApplication.run(EducationApplication.class, args);
+
+        // El método main no debe realizar pruebas con controladores.
     }
 
 }

@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.PageRepository;
 import repository.BookRepository;
+import services.PageService;
 
 import java.util.List;
 
 @Service
-public class PageServiceImpl {
+public class PageServiceImpl implements PageService {
 
     private final PageRepository pageRepository;
     private final BookRepository bookRepository;
@@ -29,6 +30,11 @@ public class PageServiceImpl {
     // Obtener una página por ID
     public Page getPageById(Long id) {
         return pageRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Page createPage(Page page) {
+        return null;
     }
 
     // Crear una nueva página
@@ -62,5 +68,10 @@ public class PageServiceImpl {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public List<Page> getPagesByBookId(Long bookId) {
+        return null;
     }
 }
