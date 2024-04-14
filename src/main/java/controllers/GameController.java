@@ -92,4 +92,8 @@ public class GameController {
         }
     }
 
+    public String sayHello() {
+        return "Desde game COntroller";
+    }
+
 }
